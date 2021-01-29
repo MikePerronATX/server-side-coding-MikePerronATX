@@ -8,6 +8,7 @@
 
 # then unignore what you want to track. the ! (called "bang") means "not"
 !images
+!css
 !.gitignore
 !*.html
 !*.jpg
