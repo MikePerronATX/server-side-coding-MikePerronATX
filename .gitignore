@@ -9,9 +9,12 @@
 # then unignore what you want to track. the ! (called "bang") means "not"
 !images
 !css
+!js
+!.vscode
+!.json
 !.gitignore
 !*.html
-!*.jpg
+!*.JPG
 !*.png
 !*.gif
 !*.ico
