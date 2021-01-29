@@ -63,18 +63,20 @@
           * Do not delete this comment,
           * ********************************************** */
          
-         if (!empty($_POST['text1']) && !empty($_POST['text2']) && !empty($_POST['text3']) && !empty($_POST['text4'])) {
+         if (!empty($_POST['text1']) && !empty($_POST['text2']) && !empty($_POST['text3']) && !empty($_POST['text4']) && !empty($_POST['text5'])) {
              // extract the data from the global $_POST (if it exists) into local variables.
              // NEVER work with $_POST directly, get away from it as fast as possible.
              $text1 = $_POST['text1'];
              $text2 = $_POST['text2'];
              $text3 = $_POST['text3'];
              $text4 = $_POST['text4'];
+             $text5 = $_POST['text5'];
          } else {
              $text1 = "";
              $text2 = "";
              $text3 = "";
              $text4 = "";
+             $text5 = "";
          }
          
          /* * ******************************************************
@@ -89,9 +91,10 @@
          $text2 = trim($text2);
          $text3 = trim($text3);
          $text4 = trim($text4);
+         $text5 = trim($text5);
          
          
-         if (!empty($text1) && !empty($text2) && !empty($text3) && !empty($text4)) {
+         if (!empty($text1) && !empty($text2) && !empty($text3) && !empty($text4) && !empty($text5)) {
          
              /*     * *************************************************************************
               * STEP 3 and 4: PROCESSING and OUTPUT: Notice this code only executes
@@ -101,7 +104,7 @@
               * ************************************************************************ */
          
              // the following code shows how you can access parts of the $_POST array
-             echo "your title is: " . $text1 . " ". $text2 . " ". $text3 . " ". $text4 . "<br>";
+             echo "your title is: " . $text1 . " ". $text2 . " ". $text3 . " ". $text4 . " ". $text5 .  "<br>";
              $lengthT1 = strlen($text1);
          
              if ($lengthT1 > 0) {
@@ -126,11 +129,32 @@
                 echo "the length of your fourth input is: " . $lengthT4 . "<br>";
             }
             echo "<br>";
-			
-			$total= $lengthT1 + $lengthT2;  
-            echo "Sum: ", $total, "<br>"; 
 
-             echo '<a href="index.html">try again</a><br>';
+            $lengthT5 = strlen($text5);
+             if ($lengthT5 > 0) {
+                echo "the length of your fifth input is: " . $lengthT5 . "<br>";
+            }
+            echo "<br>";
+
+            $total= $lengthT1 + $lengthT2 + $lengthT3 + $lengthT4 + $lengthT5;  
+            echo "Sum: ", $total, "<br>";
+
+
+            if($total >30){
+                echo "Big Name!";
+            }
+            echo "<br>";
+            if($total <30){
+                echo "small name.";
+            }
+            echo "<br>";
+            
+
+
+
+
+
+            echo '<a href="index.html">try again</a><br>';
          } else {
              echo "you did not enter anything in one or all of the text boxes.<br>";
              echo '<a href="index.html">try again</a><br>';
