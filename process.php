@@ -125,7 +125,10 @@
              if ($lengthT4 > 0) {
                 echo "the length of your fourth input is: " . $lengthT4 . "<br>";
             }
-            echo "<br>";             
+            echo "<br>";
+			
+			$total= $lengthT1 + $lengthT2;  
+            echo "Sum: ", $total, "<br>"; 
 
              echo '<a href="index.html">try again</a><br>';
          } else {
