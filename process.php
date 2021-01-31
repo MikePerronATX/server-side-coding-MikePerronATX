@@ -49,6 +49,14 @@
          $text3 = trim($text3);
          $text4 = trim($text4);
          $text5 = trim($text5);
+
+         $text1 = strip_tags($text1);
+         $text2 = strip_tags($text2);
+         $text3 = strip_tags($text3);
+         $text4 = strip_tags($text4);
+         $text5 = strip_tags($text5);
+
+
          
          
          if (!empty($text1) && !empty($text2) && !empty($text3) && !empty($text4) && !empty($text5)) {
