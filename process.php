@@ -1,6 +1,8 @@
 <!--
-    Simple HTML page with all the basic and required parts to make a complete
-    functional web page with external style sheets and JavaScript
+    Name: Michael Perron
+    Coding 02
+    Purpose: Creating a webpage with a form to be completed by the user.
+    Once completed, the page must accept input, validate, process, and output.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,15 +18,15 @@
     </head>
     <header>
         <div >
-            <h1>Your Response</h1>
+            <h1>Mardi Gras Questionaire Form</h1>
         </div>
         <hr>
         <div >
-            <h2>here is what you said:</h2>
+            <h2>your responses</h2>
         </div>
     </header>
     <body>
-    <?php
+        <?php
 
 
 /* * *********************************************
@@ -79,76 +81,76 @@
 * a saftey feature similar to this.
 * Do not delete this comment.
 * ************************************************************************ */
-
             $sentence = "You are " . $text1 . " " . $text2 . " " . $text3 . " of ". $text4 . " and " . $text5;
-            
+        ?>
+        <div class="bg">
+            <div id="s">
+                <?php
+                echo $sentence. "<br>";
+                echo "<br>";
+                ?>
+            </div>
+            <?php 
+                echo "Length of each part of the title: <br>";
             ?>
-        <h1><?php
-            echo $sentence;
-            echo "<br>";
-            ?></h1>
-        <h2><?php 
-            echo "Length of each part of the title: <br>";
-            ?></h2>
-        <h2><?php
-            $lengthT1 = strlen($text1);
-            if ($lengthT1 > 0) {
-                          echo $text1. " is " . $lengthT1 . " characters. <br>";
-                      }
-             ?></h2>
-        <h2><?php 
-            $lengthT2 = strlen($text2);
-            if ($lengthT2 > 0) {
-               echo $text2. " is " . $lengthT2 . " characters. <br>";
-            }
-            ?></h2>
-        <h2><?php
-            $lengthT3 = strlen($text3);
-            if ($lengthT3 > 0) {
-               echo $text3. " is " . $lengthT3 . " characters. <br>";
-            }
-            ?></h2>
-        <h2><?php
-            $lengthT4 = strlen($text4);
-            if ($lengthT4 > 0) {
-               echo $text4. " is " . $lengthT4 . " characters. <br>";
-            }
-            ?></h2>
-        <h2><?php
-            $lengthT5 = strlen($text5);
-                    if ($lengthT5 > 0) {
-                       echo $text5. " is " . $lengthT5 . " characters. <br>";
-                   }
-            ?></h2>
-        <?php
-            $sentenceLength = strlen($sentence);
+            <?php
+                $lengthT1 = strlen($text1);
+                if ($lengthT1 > 0) {
+                            echo $text1. " is " . $lengthT1 . " characters. <br>";
+                        }
             ?>
-        <h2><?php
-            echo "Length of the whole title (including spaces): " .$sentenceLength. "<br>";;
-            echo "<br>";
-            ?></h2>
-        <h2><?php
-            if($sentenceLength > 30){
-                echo "That’s a heck of a title!​";
-            }
-            ?></h2>
-        <h2><?php
-            if($sentenceLength < 30){
-                echo "That’s a cute little title.";
-            }
-            ?></h2>
-        <h2><?php
-            echo '<a href="index.html">try again</a><br>';
-            ?></h2>
-        <h2><?php
-            } else {   
-                echo "​I’m sorry, your input was not valid.<br>";
+            <?php 
+                $lengthT2 = strlen($text2);
+                if ($lengthT2 > 0) {
+                echo $text2. " is " . $lengthT2 . " characters. <br>";
+                }
+            ?>
+            <?php
+                $lengthT3 = strlen($text3);
+                if ($lengthT3 > 0) {
+                echo $text3. " is " . $lengthT3 . " characters. <br>";
+                }
+            ?>
+            <?php
+                $lengthT4 = strlen($text4);
+                if ($lengthT4 > 0) {
+                echo $text4. " is " . $lengthT4 . " characters. <br>";
+                }
+            ?>
+            <?php
+                $lengthT5 = strlen($text5);
+                        if ($lengthT5 > 0) {
+                        echo $text5. " is " . $lengthT5 . " characters. <br>";
+                    }
+            ?>
+            <?php
+                $sentenceLength = strlen($sentence);
+            ?>
+            <?php
+                echo "Length of the whole title (including spaces): " .$sentenceLength. "<br>";
+                echo "<br>";
+            ?>
+            <?php
+                if($sentenceLength > 30){
+                    echo "That’s a heck of a title!​";
+                    echo "<br>";
+                }
+            ?>
+            <?php
+                if($sentenceLength < 30){
+                    echo "That’s a cute little title.";
+                    echo "<br>";
+                }
+            ?>
+            <?php
                 echo '<a href="index.html">try again</a><br>';
-             }
-            ?></h2>
-        <h2><?php
-            ?></h2>
-        <h2><?php
-            ?></h2>
+            ?>
+            <?php
+                } else {   
+                    echo "​I’m sorry, your input was not valid.<br>";
+                    echo '<a href="index.html">try again</a><br>';
+                }
+            ?>
+        </div>    
     </body>
 </html>
