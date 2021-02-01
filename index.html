@@ -1,3 +1,9 @@
+<!-- -------------------
+Name: Michael Perron
+Coding 02
+Purpose: Creating a webpage with a form to be completed by the user.
+Once completed, the page must accept input, validate, process, and output.
+------------------- -->
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -16,27 +22,27 @@
             <h2>Please Answer the Following Questions:</h2>
    </header>
    <body>
-      <div class="form">
-         <form action="process.php"    method="post">
-             
-            <div class="col-sm-12">question 1
-               <input type="text" id="textbox1" placeholder="title" name="text1" maxlength="64"><br>
-            </div>
-           
-            <div class="col-sm-12">question 2
-               <input type="text" id="textbox2" placeholder="favorite drink" name="text2" maxlength="64"><br>
-            </div>
-            <div class="col-sm-12">question 3
-               <input type="text" id="textbox3" placeholder="pet's name"name="text3" maxlength="64"><br>
-            </div>
-            <div class="col-sm-12">question 4
-               <input type="text" id="textbox4" placeholder="fictional place"name="text4" maxlength="64"><br>
-            </div>
-            <div class="col-sm-12">question 5
-               <input type="text" id="textbox4" placeholder="real place"name="text5" maxlength="64"><br>
-            </div>
-            <button type="submit">Submit</button>
-         </form>
-      </div>
+        <div class="form">
+            <form action="process.php"    method="post">
+                
+                <div class="col-sm-12">Enter your title.
+                <input type="text" id="textbox1" placeholder="title" name="text1" maxlength="64"><br>
+                </div>
+            
+                <div class="col-sm-12">Enter your favorite drink.
+                <input type="text" id="textbox2" placeholder="favorite drink" name="text2" maxlength="64"><br>
+                </div>
+                <div class="col-sm-12">Enter your pet's name.
+                <input type="text" id="textbox3" placeholder="pet's name"name="text3" maxlength="64"><br>
+                </div>
+                <div class="col-sm-12">Enter a fictional place.
+                <input type="text" id="textbox4" placeholder="fictional place"name="text4" maxlength="64"><br>
+                </div>
+                <div class="col-sm-12">Enter a real place.
+                <input type="text" id="textbox4" placeholder="real place"name="text5" maxlength="64"><br>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
    </body>
 </html>
