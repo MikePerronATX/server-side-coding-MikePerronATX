@@ -34,19 +34,19 @@
 * Do not delete this comment,
 * ********************************************** */
         
-            if (!empty($_POST['text1']) && !empty($_POST['text2']) && !empty($_POST['text3']) && !empty($_POST['text4']) && !empty($_POST['text5'])) {
+            if (!empty($_POST['title']) && !empty($_POST['drink']) && !empty($_POST['pet']) && !empty($_POST['rl_place']) && !empty($_POST['rl_place'])) {
             
-                $text1 = $_POST['text1'];
-                $text2 = $_POST['text2'];
-                $text3 = $_POST['text3'];
-                $text4 = $_POST['text4'];
-                $text5 = $_POST['text5'];
+                $title = $_POST['title'];
+                $drink = $_POST['drink'];
+                $pet = $_POST['pet'];
+                $fic_place = $_POST['fic_place'];
+                $rl_place = $_POST['rl-place'];
             } else {
-                $text1 = "";
-                $text2 = "";
-                $text3 = "";
-                $text4 = "";
-                $text5 = "";
+                $title = "";
+                $drink = "";
+                $pet = "";
+                $fic_place = "";
+                $rl_place = "";
             }
 
 /* * ******************************************************
@@ -55,25 +55,25 @@
 * Do not delete this comment.
 * ****************************************************** */
 
-            $text1 = trim($text1);
-            $text2 = trim($text2);
-            $text3 = trim($text3);
-            $text4 = trim($text4);
-            $text5 = trim($text5);
+            $title = trim($title);
+            $drink = trim($drink);
+            $pet = trim($pet);
+            $fic_place = trim($fic_place);
+            $rl_place = trim($rl_place);
             
-            $text1 = strip_tags($text1);
-            $text2 = strip_tags($text2);
-            $text3 = strip_tags($text3);
-            $text4 = strip_tags($text4);
-            $text5 = strip_tags($text5);
+            $title = strip_tags($title);
+            $drink = strip_tags($drink);
+            $pet = strip_tags($pet);
+            $fic_place = strip_tags($fic_place);
+            $rl_place = strip_tags($rl_place);
             
-            $text1 = substr($text1, $lengthT1, 64);
-            $text2 = substr($text2, $lengthT2, 64);
-            $text3 = substr($text3, $lengthT3, 64);
-            $text4 = substr($text4, $lengthT4, 64);
-            $text5 = substr($text5, $lengthT5, 64);
+            $title = substr($title, $title_len, 64);
+            $drink = substr($drink, $drink_len, 64);
+            $pet = substr($pet, $pet_len, 64);
+            $fic_place = substr($fic_place, $fic_len, 64);
+            $rl_place = substr($rl_place, $rl_len, 64);
             
-            if (!empty($text1) && !empty($text2) && !empty($text3) && !empty($text4) && !empty($text5)) {
+            if (!empty($title) && !empty($drink) && !empty($pet) && !empty($fic_place) && !empty($rl_place)) {
 
 /* * *************************************************************************
 * STEP 3 and 4: PROCESSING and OUTPUT: Notice this code only executes
@@ -81,7 +81,7 @@
 * a saftey feature similar to this.
 * Do not delete this comment.
 * ************************************************************************ */
-            $sentence = "You are " . $text1 . " " . $text2 . " " . $text3 . " of ". $text4 . " and " . $text5;
+            $sentence = "You are " . $title . " " . $drink . " " . $pet . " of ". $fic_place . " and " . $rl_place;
         ?>
         <div class="bg">
             <div id="s">
@@ -94,33 +94,33 @@
                 echo "Length of each part of the title: <br>";
             ?>
             <?php
-                $lengthT1 = strlen($text1);
-                if ($lengthT1 > 0) {
-                            echo $text1. " is " . $lengthT1 . " characters. <br>";
+                $title_len = strlen($title);
+                if ($title_len > 0) {
+                            echo $title. " is " . $title_len . " characters. <br>";
                         }
             ?>
             <?php 
-                $lengthT2 = strlen($text2);
-                if ($lengthT2 > 0) {
-                echo $text2. " is " . $lengthT2 . " characters. <br>";
+                $drink_len = strlen($drink);
+                if ($drink_len > 0) {
+                echo $drink. " is " . $drink_len . " characters. <br>";
                 }
             ?>
             <?php
-                $lengthT3 = strlen($text3);
-                if ($lengthT3 > 0) {
-                echo $text3. " is " . $lengthT3 . " characters. <br>";
+                $pet_len = strlen($pet);
+                if ($pet_len > 0) {
+                echo $pet. " is " . $pet_len . " characters. <br>";
                 }
             ?>
             <?php
-                $lengthT4 = strlen($text4);
-                if ($lengthT4 > 0) {
-                echo $text4. " is " . $lengthT4 . " characters. <br>";
+                $fic_len = strlen($fic_place);
+                if ($fic_len > 0) {
+                echo $fic_place. " is " . $fic_len . " characters. <br>";
                 }
             ?>
             <?php
-                $lengthT5 = strlen($text5);
-                        if ($lengthT5 > 0) {
-                        echo $text5. " is " . $lengthT5 . " characters. <br>";
+                $rl_len = strlen($rl_place);
+                        if ($rl_len > 0) {
+                        echo $rl_place. " is " . $rl_len . " characters. <br>";
                     }
             ?>
             <?php
