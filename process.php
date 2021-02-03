@@ -1,8 +1,8 @@
 <!--
-    Name: Michael Perron
-    Coding 02
-    Purpose: Creating a webpage with a form to be completed by the user.
-    Once completed, the page must accept input, validate, process, and output.
+Name: Michael Perron
+Coding 02
+Purpose: Creating a webpage with a form to be completed by the user.
+Once completed, the page must accept input, validate, process, and output.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,16 +26,13 @@
         </div>
     </header>
     <body>
+        <!-- beginning php -->
         <?php
-
-
 /* * *********************************************
 * STEP 1: INPUT: Do NOT process, just get the data.
 * Do not delete this comment,
 * ********************************************** */
-        
             if (!empty($_POST['title']) && !empty($_POST['drink']) && !empty($_POST['pet']) && !empty($_POST['ficPlace']) && !empty($_POST['rlPlace'])) {
-            
                 $title = $_POST['title'];
                 $drink = $_POST['drink'];
                 $pet = $_POST['pet'];
@@ -48,13 +45,11 @@
                 $ficPlace = "";
                 $rlPlace = "";
             }
-
 /* * ******************************************************
 * STEP 2: VALIDATION: Always clean your input first!!!!
 * Do NOT process, only CLEAN and VALIDATE.
 * Do not delete this comment.
-* ****************************************************** */
-
+* ****************************************************** */            
             $title = trim($title);
             $drink = trim($drink);
             $pet = trim($pet);
@@ -74,83 +69,62 @@
             $rlPlace = substr($rlPlace, $realLen, 64);
             
             if (!empty($title) && !empty($drink) && !empty($pet) && !empty($ficPlace) && !empty($rlPlace)) {
-
 /* * *************************************************************************
 * STEP 3 and 4: PROCESSING and OUTPUT: Notice this code only executes
 * if you have valid data from steps 1 and 2. Your code must always have
 * a saftey feature similar to this.
 * Do not delete this comment.
-* ************************************************************************ */
-            $sentence = "You are " . $title . " " . $drink . " " . $pet . " of ". $ficPlace . " and " . $rlPlace;
-        ?>
-        <div class="bg">
-            <div id="greeting">
-                <?php
-                echo $sentence. "<br>";
-                echo "<br>";
-                ?>
-            </div>
-            <?php 
-                echo "Length of each part of the title: <br>";
-            ?>
-            <?php
-                $titleLen = strlen($title);
-                if ($titleLen > 0) {
-                            echo $title. " is " . $titleLen . " characters. <br>";
-                        }
-            ?>
-            <?php 
-                $drinkLen = strlen($drink);
-                if ($drinkLen > 0) {
-                echo $drink. " is " . $drinkLen . " characters. <br>";
-                }
-            ?>
-            <?php
-                $petLen = strlen($pet);
-                if ($petLen > 0) {
-                echo $pet. " is " . $petLen . " characters. <br>";
-                }
-            ?>
-            <?php
-                $ficLen = strlen($ficPlace);
-                if ($ficLen > 0) {
-                echo $ficPlace. " is " . $ficLen . " characters. <br>";
-                }
-            ?>
-            <?php
-                $realLen = strlen($rlPlace);
-                        if ($realLen > 0) {
+* ************************************************************************ */                
+                $sentence = "You are " . $title . " " . $drink . " " . $pet . " of ". $ficPlace . " and " . $rlPlace;
+                
+                echo '<div class="bg">';
+                    echo '<div id="response">' .$sentence. '</div>' ;
+                    echo "<br>";
+            
+                    echo "Length of each part of the title: <br>";
+                
+                    $titleLen = strlen($title);
+                    if ($titleLen > 0) {
+                        echo $title. " is " . $titleLen . " characters. <br>";
+                    }
+                    $drinkLen = strlen($drink);
+                    if ($drinkLen > 0) {
+                        echo $drink. " is " . $drinkLen . " characters. <br>";
+                    }
+                    $petLen = strlen($pet);
+                    if ($petLen > 0) {
+                        echo $pet. " is " . $petLen . " characters. <br>";
+                    }
+                    $ficLen = strlen($ficPlace);
+                    if ($ficLen > 0) {
+                        echo $ficPlace. " is " . $ficLen . " characters. <br>";
+                    }
+                    $realLen = strlen($rlPlace);
+                    if ($realLen > 0) {
                         echo $rlPlace. " is " . $realLen . " characters. <br>";
                     }
-            ?>
-            <?php
-                $sentenceLength = strlen($sentence);
-            ?>
-            <?php
-                echo "Length of the whole title (including spaces): " .$sentenceLength. "<br>";
-                echo "<br>";
-            ?>
-            <?php
-                if($sentenceLength > 30){
-                    echo "That’s a heck of a title!​";
+            
+                    $sentenceLength = strlen($sentence);
+                
+                    echo "Length of the whole title (including spaces): " .$sentenceLength;
                     echo "<br>";
-                }
-            ?>
-            <?php
-                if($sentenceLength < 30){
-                    echo "That’s a cute little title.";
-                    echo "<br>";
-                }
-            ?>
-            <?php
-                echo '<a href="index.html">try again</a><br>';
-            ?>
-            <?php
-                } else {   
+                    if($sentenceLength > 30){
+                        echo "That’s a heck of a title!​";
+                        echo "<br>";
+                    }
+                    if($sentenceLength < 30){
+                        echo "That’s a cute little title.";
+                        echo "<br>";
+                    }
+                    echo '<a href="index.html">try again</a><br>';
+                echo '</div>';
+            }
+            else {
+                echo '<div class="bg">';
                     echo "​I’m sorry, your input was not valid.<br>";
                     echo '<a href="index.html">try again</a><br>';
-                }
-            ?>
-        </div>    
+                echo '</div>';
+            }
+        ?> 
     </body>
 </html>
